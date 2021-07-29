@@ -20,7 +20,7 @@ class MainController extends Controller
 {
     public function index()
     {
-
+        dd('hej!');
         $games = game::all();
         return view('index', compact('games'));
     }
