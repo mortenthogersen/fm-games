@@ -87,13 +87,13 @@ class MainController extends Controller
         $igdb = new IGDB('games');
         $api = $igdb->where('id', '=', (int)$game->api_id)->with(['screenshots', 'cover', 'videos', 'platforms'])->first();
 
+        if ($api['videos']) {
+            $videos = [];
 
-        $videos = [];
-
-        foreach ($api['videos'] as $video) {
-            $videos[] = $video['video_id'];
+            foreach ($api['videos'] as $video) {
+                $videos[] = $video['video_id'];
+            }
         }
-
 
         $files = Storage::allFiles("public/games/" . $game->id . "/screenshots");
 
@@ -128,7 +128,7 @@ class MainController extends Controller
     }
     public function change_game(Request $request)
     {
-        
+
 
 
         dd($request);

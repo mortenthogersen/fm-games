@@ -187,10 +187,10 @@
                                                     @foreach($screenshots as $screenshot)
                                                     <div class="w-1/6 pr-2 flex-shrink-0 pb-2">
 
-                                                        <a @click="$dispatch('img-modal', {  imgModalSrc: '{{ asset('storage/games/'.$game->id .'/screenshots/'.$screenshot) }}', imgModalDesc: '' })"
+                                                        <a @click="$dispatch('img-modal', {  imgModalSrc: 'https://images.igdb.com/igdb/image/upload/t_screenshot_huge/{{ $screenshot }}.jpg', imgModalDesc: '' })"
                                                             class="cursor-pointer">
                                                             <img alt="Placeholder" class="object-cover rounded"
-                                                                src="{{ asset('storage/games/'.$game->id .'/screenshots/'.$screenshot) }}">
+                                                                src="https://images.igdb.com/igdb/image/upload/t_screenshot_huge/{{ $screenshot }}.jpg">
                                                         </a>
                                                     </div>
 
